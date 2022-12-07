@@ -1,0 +1,42 @@
+{
+  "name": "h-devkit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest test",
+    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx,.json --max-warnings 0 --cache",
+    "lint:fix": "pnpm run lint --fix",
+    "format": "prettier --write --cache .",
+    "prepare": "husky install",
+    "coverage": "vitest run --coverage",
+    "docs:dev": "vitepress dev packages",
+    "docs:build": "vitepress build packages"
+  },
+  "lint-staged": {
+    "*.{vue,js,ts,jsx,tsx,json}": [
+      "pnpm run lint",
+      "pnpm run format"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@commitlint/cli": "^17.3.0",
+    "@commitlint/config-conventional": "^17.3.0",
+    "@types/node": "^18.11.11",
+    "@typescript-eslint/eslint-plugin": "^5.45.1",
+    "@typescript-eslint/parser": "^5.45.1",
+    "@vitest/coverage-c8": "^0.25.4",
+    "eslint": "^8.29.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.1.0",
+    "prettier": "^2.8.0",
+    "typescript": "^4.9.3",
+    "vitepress": "1.0.0-alpha.30",
+    "vitest": "^0.25.4"
+  }
+}
