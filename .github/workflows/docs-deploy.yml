@@ -45,7 +45,6 @@ jobs:
         # 环境变量
         env:
           GITHUB_TOKEN: ${{ secrets.H_DEVKIT }}
-          GH_PAT: ${{ secrets.personal-token }}
         with:
           # 部署到 gh-pages 分支
           target_branch: gh-pages
