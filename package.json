@@ -11,7 +11,9 @@
     "prepare": "husky install",
     "coverage": "vitest run --coverage",
     "docs:dev": "vitepress dev packages",
-    "docs:build": "vitepress build packages"
+    "docs:build": "vitepress build packages",
+    "dev": "tsup --watch",
+    "build": "tsup"
   },
   "lint-staged": {
     "*.{vue,js,ts,jsx,tsx,json}": [
@@ -35,6 +37,7 @@
     "husky": "^8.0.2",
     "lint-staged": "^13.1.0",
     "prettier": "^2.8.0",
+    "tsup": "^6.5.0",
     "typescript": "^4.9.3",
     "vitepress": "1.0.0-alpha.30",
     "vitest": "^0.25.4"
