@@ -10,8 +10,8 @@
     "format": "prettier --write --cache .",
     "prepare": "husky install",
     "coverage": "vitest run --coverage",
-    "docs:dev": "vitepress dev packages",
-    "docs:build": "vitepress build packages",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
     "dev": "tsup --watch",
     "build": "tsup"
   },

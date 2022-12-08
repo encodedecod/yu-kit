@@ -15,5 +15,5 @@ hero:
       link: /guide/
     - theme: alt
       text: 组件文档
-      link: /core/getDevice/
+      link: /getDevice/
 ---

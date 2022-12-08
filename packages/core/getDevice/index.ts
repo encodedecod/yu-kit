@@ -1,4 +1,4 @@
-import { isString } from 'shared';
+import { isString } from '@h-devkit/shared';
 
 export const DEVICES = [
   {

@@ -1,4 +1,5 @@
-import { defineConfig } from 'tsup';
+import { defineConfig, Format } from 'tsup';
+// import fs from 'fs'
 
 const outExtensionFn = ({ format }: { format: string }) => {
   if (format === 'esm') return { js: `.${format}.js` };
@@ -13,17 +14,21 @@ const baseConfig = {
   sourcemap: true, // 添加 sourcemap 文件
   clean: true, // 是否先清除打包的目录，例如 dist
   outExtension: outExtensionFn,
+  format: ['cjs', 'esm', 'iife'] as Format[],
 };
+// const myReadfile =  () => {
+// const dirs =  fs.readdirSync("./packages")
+//  return defineConfig(dirs.map(file=>({entry:[`packages/${file}/index.ts`],outDir:`packages/${file}/dist`,...baseConfig})))
+// }
+
 export default defineConfig([
   {
     entry: ['packages/core/index.ts'],
-    format: ['cjs', 'esm', 'iife'],
     outDir: 'packages/core/dist',
     ...baseConfig,
   },
   {
     entry: ['packages/shared/index.ts'],
-    format: ['cjs', 'esm', 'iife'],
     outDir: 'packages/shared/dist',
     ...baseConfig,
   },
