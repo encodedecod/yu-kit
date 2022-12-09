@@ -1,5 +1,5 @@
 import { defineConfig, Format } from 'tsup';
-// import fs from 'fs'
+import fg from 'fast-glob';
 
 const outExtensionFn = ({ format }: { format: string }) => {
   if (format === 'esm') return { js: `.${format}.js` };
@@ -16,20 +16,18 @@ const baseConfig = {
   outExtension: outExtensionFn,
   format: ['cjs', 'esm', 'iife'] as Format[],
 };
-// const myReadfile =  () => {
-// const dirs =  fs.readdirSync("./packages")
-//  return defineConfig(dirs.map(file=>({entry:[`packages/${file}/index.ts`],outDir:`packages/${file}/dist`,...baseConfig})))
-// }
+const myReadfile = () => {
+  const entries = fg.sync([`packages/**/*.ts`, `packages/**/*.tsx`], {
+    onlyFiles: false,
+    deep: Infinity,
+    ignore: [`**/dist/**`, `**/node_modules/**`, `**/*.test.ts`],
+  });
+  return defineConfig(
+    entries.map((file) => {
+      const outDir = file.replace(/(packages\/)(.*?)\//, '$1$2/dist/').replace(/\/index.(ts|tsx)$/, '');
+      return { entry: [file], outDir: outDir, ...baseConfig };
+    }),
+  );
+};
 
-export default defineConfig([
-  {
-    entry: ['packages/core/index.ts'],
-    outDir: 'packages/core/dist',
-    ...baseConfig,
-  },
-  {
-    entry: ['packages/shared/index.ts'],
-    outDir: 'packages/shared/dist',
-    ...baseConfig,
-  },
-]);
+export default myReadfile();

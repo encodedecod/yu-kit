@@ -2,7 +2,7 @@
   "name": "@h-devkit/shared",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "unpkg": "./dist/index.global.js",
   "types": "./dist/index.d.ts",
