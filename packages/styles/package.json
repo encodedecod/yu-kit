@@ -1,0 +1,13 @@
+{
+  "name": "@h-devkit/styles",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo skiped"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

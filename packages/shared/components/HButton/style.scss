@@ -1,0 +1,248 @@
+@import '@h-devkit/styles/index.scss';
+
+/** button */
+$button-default-color: #fff !default;
+$button-disabled-color: #bbb !default;
+$button-disabled-bg-color: #eee !default;
+$button-border-radius-default: 24px !default;
+$button-border-radius-square: 4px !default;
+$button-height-s: 26px !default;
+$button-height-m: 36px !default;
+$button-height-l: 48px !default;
+$button-width-s: 30px !default;
+$button-width-m: 44px !default;
+$button-width-l: 54px !default;
+$button-font-size-s: $font-body-s !default;
+$button-font-size-m: $font-body-m !default;
+$button-font-size-l: $font-header-s !default;
+$button-font-size-extra: $font-caption-s !default;
+$button-padding-s: 12px !default;
+$button-padding-m: 16px !default;
+$button-padding-l: 16px !default;
+$button-type-text-padding: 4px !default;
+
+.hui-button {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: $font-weight-medium;
+  color: $button-default-color;
+  text-align: center;
+  white-space: nowrap;
+
+  .content-wrapper {
+    overflow: hidden;
+
+    &.submit-content-wrapper {
+      display: flex;
+      flex: 1;
+      justify-content: center;
+    }
+
+    .hui-button-img {
+      width: 16px;
+      height: 16px;
+      margin-right: 7px;
+    }
+
+    .button-text {
+      overflow: hidden;
+      font-weight: $font-weight-semi-bold;
+      line-height: 1.2;
+      text-overflow: ellipsis;
+    }
+
+    &.hidden {
+      visibility: hidden;
+    }
+  }
+
+  .loading-area {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border: 2px solid;
+    border-right-color: transparent;
+    border-radius: 50%;
+    animation: loader-rotate 1s linear infinite;
+  }
+
+  &.primary {
+    background: $theme-color-primary;
+
+    &.disabled {
+      font-weight: $font-weight-bold;
+      color: $button-disabled-color;
+      background: $button-disabled-bg-color;
+    }
+  }
+
+  &.secondary {
+    color: $theme-color-primary;
+    background: transparent;
+
+    &.disabled {
+      font-weight: $font-weight-bold;
+      color: $button-disabled-color;
+      background: transparent;
+    }
+  }
+
+  &.text {
+    width: unset !important;
+    height: unset !important;
+    padding: $button-type-text-padding !important;
+    color: $theme-color-primary;
+    background: transparent !important;
+
+    &.disabled {
+      box-sizing: border-box;
+      width: unset !important;
+      height: unset !important;
+      padding: $button-type-text-padding !important;
+      color: $theme-color-primary;
+      background: transparent !important;
+      opacity: 0.3;
+    }
+
+    .loading-area {
+      position: unset;
+      width: 12px;
+      height: 12px;
+      margin-right: 3px;
+    }
+
+    .content-wrapper {
+      &.hidden {
+        visibility: visible;
+      }
+    }
+  }
+
+  &.small {
+    height: $button-height-s;
+    padding: 0 $button-padding-s;
+    font-size: $button-font-size-s;
+
+    .loading-area {
+      transform: scale(0.6);
+    }
+  }
+
+  &.medium {
+    height: $button-height-m;
+    padding: 0 $button-padding-m;
+    font-size: $button-font-size-m;
+
+    .loading-area {
+      transform: scale(0.8);
+    }
+  }
+
+  &.large {
+    height: $button-height-l;
+    padding: 0 $button-padding-l;
+    font-size: $button-font-size-l;
+
+    .extra {
+      margin-top: 1px;
+      font-size: $button-font-size-extra;
+      line-height: 1;
+    }
+  }
+
+  &.radius-default {
+    border-radius: $button-border-radius-default;
+  }
+
+  &.radius-square {
+    border-radius: $button-border-radius-square;
+  }
+
+  &.radius-no-radius {
+    border-radius: unset;
+  }
+
+  &.click-opacity {
+    &:active {
+      opacity: 0.8;
+    }
+  }
+
+  &.submit {
+    width: 100%;
+    height: 48px;
+    background: $theme-color-primary;
+
+    &.disabled {
+      font-weight: $font-weight-bold;
+      color: $font-color-grey;
+      background: $border-color;
+    }
+  }
+
+  &.border {
+    width: 100%;
+    height: 48px;
+    color: $font-color-dark;
+    background: transparent;
+    border: 1px solid $line-color;
+  }
+
+  &::after {
+    content: unset;
+  }
+
+  &.inline {
+    display: inline-flex;
+  }
+}
+
+@keyframes loader-rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.bottom-button-bar {
+  // TODO 定位由吸附容器提供
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: $z-index-xs;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 16px 16px 36px;
+  background: $white;
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%);
+
+  $button-bar-default-text-color: #bbb;
+  $button-bar-font-weight: 600;
+
+  .bottom-button {
+    width: 100%;
+    height: 48px;
+    border-radius: 24px;
+  }
+
+  .button-bar-text {
+    font-family: AvenirNext-DemiBold, AvenirNext, sans-serif;
+    font-size: $font-body-m;
+    font-weight: $button-bar-font-weight;
+    line-height: 19px;
+    color: $button-bar-default-text-color;
+
+    &.button-bar-allow {
+      color: $white;
+    }
+  }
+}

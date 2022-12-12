@@ -17,7 +17,7 @@ const baseConfig = {
   format: ['cjs', 'esm', 'iife'] as Format[],
 };
 const myReadfile = () => {
-  const entries = fg.sync([`packages/**/*.ts`, `packages/**/*.tsx`], {
+  const entries = fg.sync([`packages/**/index.ts`, `packages/**/index.tsx`], {
     onlyFiles: false,
     deep: Infinity,
     ignore: [`**/dist/**`, `**/node_modules/**`, `**/*.test.ts`],
@@ -25,7 +25,19 @@ const myReadfile = () => {
   return defineConfig(
     entries.map((file) => {
       const outDir = file.replace(/(packages\/)(.*?)\//, '$1$2/dist/').replace(/\/index.(ts|tsx)$/, '');
-      return { entry: [file], outDir: outDir, ...baseConfig };
+      return {
+        entry: [file],
+        outDir: outDir,
+        ...baseConfig,
+        loader: {
+          '.js': 'jsx',
+          '.jsx': 'jsx',
+          '.scss': 'css',
+          '.sass': 'css',
+          '.less': 'css',
+          '.css': 'css',
+        },
+      };
     }),
   );
 };

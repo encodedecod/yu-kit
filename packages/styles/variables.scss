@@ -1,0 +1,64 @@
+$default-theme-color: #e02020;
+$default-error-color: #e02020;
+$theme-color-red: #ed3737;
+$white: #fff;
+$line-color: #ddd;
+$color-grey-1: #1e1e1e;
+$color-grey-2: #575757;
+$color-grey-3: #8e8e8e;
+$color-grey-4: #b1b1b1;
+$color-grey-5: #c7c7c7;
+$color-grey-6: #ededed;
+$color-grey-7: #f8f8f8;
+$color-grey-8: $white;
+
+// TODO 这里先暂时这么用，等设计给了完整规范后再改
+$font-color-black: #000;
+$font-color-dark: #111;
+$font-color-grey: #bbb;
+$font-color-normal: #444;
+$font-color-light: #666;
+$font-color-lighter: #999;
+
+/** 字体大小 */
+$font-header-large: 24px !default; // 标题
+$font-header-l: 20px !default; // 标题
+$font-header-m: 18px !default; // 标题
+$font-header-s: 16px !default; // 标题、大按钮
+$font-body-l: 15px !default; // 表单、中按钮
+$font-body-m: 14px !default; // 表单、中按钮
+$font-body-s: 13px !default; // 正文、小按钮
+$font-caption-m: 12px !default; // 辅助文字
+$font-caption-small: 11px !default; // 辅助文字
+$font-caption-s: 9px !default; // 辅助文字
+
+/** 字体颜色 */
+$font-color-base: #1e1e1e;
+
+/** 字重 */
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+
+/** 主题色 **/
+$theme-color-primary: var(--theme-color, $default-theme-color) !default; // 主要可用于可点击按钮、高亮文字等
+$theme-color-primary-rgb: var(--theme-color-rgb, 224, 32, 32) !default; // 主要可用于可点击按钮、高亮文字等
+$theme-color-background: $color-grey-8 !default; // 页面或元素背景颜色
+
+/** 遮罩层颜色 **/
+$mask-color: rgba(#1e1e1e, 75%) !default;
+$mask-color-transparent: rgba(#1e1e1e, 0) !default; // 全透明遮罩层颜色
+
+/** z-index **/
+$z-index-xs: 3;
+$z-index-s: 4;
+$z-index-m: 6;
+$z-index-l: 8;
+$z-index-xl: 10;
+$border-color: #eee;
+$border-color-light: #f8f8f8;
+$divider-color: #f5f5f5;
+$background-color: #f5f5f5;
+$success-color: #2d9e49;
+$error-color: #ed3737;

@@ -20,7 +20,9 @@
       "@h-devkit/shared": ["./packages/shared/index.ts"],
       "@h-devkit/shared/*": ["./packages/shared/*"],
       "@h-devkit/core": ["./packages/core/index.ts"],
-      "@h-devkit/core/*": ["./packages/core/*"]
+      "@h-devkit/core/*": ["./packages/core/*"],
+      "@h-devkit/styles": ["./packages/styles"],
+      "@h-devkit/styles/*": ["./packages/styles/*"]
     }
   },
   "include": ["packages", "docs/.vitepress/*.ts", "vitest.config.ts", "*.d.ts"],
