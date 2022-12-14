@@ -1,8 +1,6 @@
 import cx from 'classnames';
 import React, { PropsWithChildren } from 'react';
 
-import './style.scss';
-
 export interface ButtonProps {
   /** 放置在按钮左边的图标 */
   leftIcon?: React.ReactNode;

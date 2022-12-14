@@ -1,11 +1,9 @@
-import Button, { ButtonProps } from './Button';
 import cx from 'classnames';
 import React, { PropsWithChildren } from 'react';
-
 import ButtonBar from './Bar';
+import Button, { ButtonProps } from './Button';
 
 import './style.scss';
-
 export interface HuiButtonProps extends ButtonProps {
   withBar?: boolean;
   barClassName?: string;

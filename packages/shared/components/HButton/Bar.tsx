@@ -1,8 +1,6 @@
 import cx from 'classnames';
 import { PropsWithChildren } from 'react';
 
-import './style.scss';
-
 interface ButtonBarProps {
   className?: string;
 }

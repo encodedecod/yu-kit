@@ -19,7 +19,9 @@
     "noImplicitAny": true,
     "baseUrl": "./",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "@h-devkit/styles": ["../../packages/styles"],
+      "@h-devkit/styles/*": ["../../packages/styles/*"]
     }
   },
   "include": ["."]
