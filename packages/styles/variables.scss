@@ -42,8 +42,16 @@ $font-weight-semi-bold: 600;
 $font-weight-bold: 700;
 
 /** 主题色 **/
-$theme-color-primary: var(--theme-color, $default-theme-color) !default; // 主要可用于可点击按钮、高亮文字等
-$theme-color-primary-rgb: var(--theme-color-rgb, 224, 32, 32) !default; // 主要可用于可点击按钮、高亮文字等
+$theme-color-primary: var(
+  --theme-color,
+  $default-theme-color
+) !default; // 主要可用于可点击按钮、高亮文字等
+$theme-color-primary-rgb: var(
+  --theme-color-rgb,
+  224,
+  32,
+  32
+) !default; // 主要可用于可点击按钮、高亮文字等
 $theme-color-background: $color-grey-8 !default; // 页面或元素背景颜色
 
 /** 遮罩层颜色 **/

@@ -1,17 +1,17 @@
-import cx from 'classnames';
-import React, { PropsWithChildren } from 'react';
-import ButtonBar from './Bar';
-import Button, { ButtonProps } from './Button';
+import cx from 'classnames'
+import React, { PropsWithChildren } from 'react'
+import ButtonBar from './Bar'
+import Button, { ButtonProps } from './Button'
 
-import './style.scss';
+import './style.scss'
 export interface HuiButtonProps extends ButtonProps {
-  withBar?: boolean;
-  barClassName?: string;
-  disabledColor?: string;
+  withBar?: boolean
+  barClassName?: string
+  disabledColor?: string
 }
 
-const HButton: React.FC<PropsWithChildren<HuiButtonProps>> = (props) => {
-  const { withBar, barClassName, disabledColor } = props;
+const HButton: React.FC<PropsWithChildren<HuiButtonProps>> = props => {
+  const { withBar, barClassName, disabledColor } = props
 
   return withBar ? (
     <ButtonBar className={barClassName}>
@@ -34,8 +34,8 @@ const HButton: React.FC<PropsWithChildren<HuiButtonProps>> = (props) => {
     </ButtonBar>
   ) : (
     <Button {...props} />
-  );
-};
+  )
+}
 
 HButton.defaultProps = {
   size: 'medium',
@@ -51,5 +51,5 @@ HButton.defaultProps = {
   extra: '',
   block: false,
   className: '',
-};
-export default HButton;
+}
+export default HButton

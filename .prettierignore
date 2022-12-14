@@ -1,0 +1,9 @@
+node_modules
+.spartan
+.coverage
+dist
+.vscode
+.gitlab-ci.yml
+pnpm-lock.yaml
+
+shared/components/src/common/HIcon/icons.scss

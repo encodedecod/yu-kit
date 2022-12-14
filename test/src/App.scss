@@ -1,0 +1,37 @@
+@import '@h-devkit/styles/variables';
+
+:root {
+  --theme-color: #ed0202;
+  /* stylelint-disable value-keyword-case */
+  --adm-font-family: AvenirNext-Regular, AvenirNext, Inter, Avenir, Helvetica,
+    Arial, sans-serif;
+
+  font-family: AvenirNext-Regular, AvenirNext, Inter, Avenir, Helvetica, Arial,
+    sans-serif !important;
+  color: $font-color-black;
+  background: $white;
+  font-synthesis: none;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-size-adjust: 100%;
+}
+
+#root {
+  position: relative;
+  width: 100vw;
+  height: calc(var(--vh, 1vh) * 100);
+  margin: 0;
+  overflow: hidden;
+
+  .test-content {
+    display: flex;
+    flex-direction: column;
+
+    .test-button {
+      width: 100%;
+      padding: 0 16px;
+      margin-top: 12px;
+    }
+  }
+}

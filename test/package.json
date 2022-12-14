@@ -14,13 +14,20 @@
   "devDependencies": {
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
+    "@vitejs/plugin-react": "^2.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "@vitejs/plugin-react": "^2.0.0",
     "vite": "^3.0.0"
   },
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "dependencies": {
+    "@h-devkit/styles": "workspace:*",
+    "filter": "^0.1.1",
+    "h-flexiable": "^0.2.2",
+    "postcss": "^8.4.20",
+    "postcss-pxtorem": "^6.0.0"
   }
 }

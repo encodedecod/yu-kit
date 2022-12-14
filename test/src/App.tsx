@@ -1,14 +1,14 @@
-import HButton from '../../packages/shared/dist/components/HButton';
+import HButton from '../../packages/shared/dist/components/HButton'
 
+import './App.scss'
 const App = () => {
   return (
-    <div>
-      <HButton color="red" type="submit">
-        ferfe
-      </HButton>
-      <h1> Hello, World! </h1>
+    <div className='test-content'>
+      <div className='test-button'>
+        <HButton type='submit'>ferfe</HButton>
+      </div>
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App

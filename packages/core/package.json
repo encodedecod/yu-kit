@@ -28,6 +28,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@h-devkit/shared": "workspace:*"
+    "@h-devkit/shared": "workspace:*",
+    "@h-devkit/styles": "workspace:^1.0.0",
+    "filter": "^0.1.1",
+    "test": "^3.2.1"
   }
 }

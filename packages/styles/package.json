@@ -9,5 +9,10 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@h-devkit/styles": "workspace:^1.0.0",
+    "filter": "^0.1.1",
+    "test": "^3.2.1"
+  }
 }
