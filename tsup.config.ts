@@ -1,20 +1,32 @@
-import { defineConfig, Format } from 'tsup'
+import { defineConfig, Format, Options } from 'tsup'
 import fg from 'fast-glob'
 import { sassPlugin } from 'esbuild-sass-plugin'
 import fs from 'fs'
 import postcss from 'postcss'
 import autoprefixer from 'autoprefixer'
 
-const baseConfig = {
-  dts: true, // 添加 .d.ts 文件
-  metafile: true, // 添加 meta 文件
-  minify: true, // 压缩
-  splitting: false,
-  sourcemap: true, // 添加 sourcemap 文件
-  clean: true, // 是否先清除打包的目录，例如 dist
-  format: ['cjs', 'esm', 'iife'] as Format[],
-  target: ['esnext'],
-}
+const baseConfigs = [
+  {
+    dts: true, // 添加 .d.ts 文件
+    metafile: true, // 添加 meta 文件
+    minify: true, // 压缩
+    splitting: false,
+    sourcemap: true, // 添加 sourcemap 文件
+    clean: true, // 是否先清除打包的目录，例如 dist
+    format: ['cjs'] as Format[],
+    target: ['esnext'],
+  },
+  {
+    dts: true, // 添加 .d.ts 文件
+    metafile: true, // 添加 meta 文件
+    minify: true, // 压缩
+    splitting: false,
+    sourcemap: true, // 添加 sourcemap 文件
+    clean: true, // 是否先清除打包的目录，例如 dist
+    format: ['esm'] as Format[],
+    target: ['esnext'],
+  },
+]
 
 const filePaths: { text: string; path: string }[] = []
 
@@ -24,13 +36,13 @@ const myReadfile = () => {
     deep: Infinity,
     ignore: [`**/dist/**`, `**/node_modules/**`, `**/*.test.ts`],
   })
-
-  return defineConfig(
-    entries.map(file => {
+  const configs: Options[] = []
+  baseConfigs.forEach(baseConfig =>
+    entries.forEach(file => {
       const outDir = file
-        .replace(/(packages\/)(.*?)\//, '$1$2/dist/')
+        .replace(/(packages\/)(.*?)\//, `cli/$2/${baseConfig.format[0]}/`)
         .replace(/\/index.(ts|tsx)$/, '')
-      return {
+      configs.push({
         entry: [file],
         outDir: outDir,
         loader: {
@@ -78,9 +90,10 @@ const myReadfile = () => {
             })
           })
         },
-      }
+      })
     }),
   )
+  return defineConfig(configs)
 }
 
 export default myReadfile()
