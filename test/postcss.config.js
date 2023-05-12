@@ -6,4 +6,4 @@ module.exports = {
       unitPrecision: 5,
     },
   },
-}
+};

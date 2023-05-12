@@ -1,5 +1,5 @@
 {
-  "name": "@h-devkit/styles",
+  "name": "@yu-kit/styles",
   "version": "1.0.0",
   "description": "",
   "private": true,
@@ -11,7 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@h-devkit/styles": "workspace:^1.0.0",
+    "@yu-kit/styles": "workspace:^1.0.0",
     "filter": "^0.1.1",
     "test": "^3.2.1"
   }

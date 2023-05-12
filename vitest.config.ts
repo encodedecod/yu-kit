@@ -1,5 +1,5 @@
-import { resolve } from 'path'
-import { defineConfig } from 'vitest/config'
+import { resolve } from 'path';
+import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   test: {
@@ -7,8 +7,8 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@h-devkit/shared': resolve(__dirname, 'packages/shared/index.ts'),
-      '@h-devkit/core': resolve(__dirname, 'packages/core/index.ts'),
+      '@yu-kit/shared': resolve(__dirname, 'packages/shared/index.ts'),
+      '@yu-kit/core': resolve(__dirname, 'packages/core/index.ts'),
     },
   },
-})
+});

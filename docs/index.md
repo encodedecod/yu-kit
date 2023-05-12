@@ -2,11 +2,11 @@
 layout: home
 sidebar: false
 
-title: h-devkit
+title: yu-kit
 titleTemplate: 再惠开源前端组件库
 
 hero:
-  name: h-devkit
+  name: yu-kit
   text: 再惠开源前端组件库
   tagline: 🎉 再惠开源前端组件库
   actions:

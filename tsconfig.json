@@ -17,12 +17,12 @@
     "noUnusedLocals": true,
     "jsx": "react-jsx",
     "paths": {
-      "@h-devkit/shared": ["./packages/shared/index.ts"],
-      "@h-devkit/shared/*": ["./packages/shared/*"],
-      "@h-devkit/core": ["./packages/core/index.ts"],
-      "@h-devkit/core/*": ["./packages/core/*"],
-      "@h-devkit/styles": ["./packages/styles"],
-      "@h-devkit/styles/*": ["./packages/styles/*"]
+      "@yu-kit/shared": ["./packages/shared/index.ts"],
+      "@yu-kit/shared/*": ["./packages/shared/*"],
+      "@yu-kit/core": ["./packages/core/index.ts"],
+      "@yu-kit/core/*": ["./packages/core/*"],
+      "@yu-kit/styles": ["./packages/styles"],
+      "@yu-kit/styles/*": ["./packages/styles/*"]
     }
   },
   "include": ["packages", "docs/.vitepress/*.ts", "vitest.config.ts", "*.d.ts"],

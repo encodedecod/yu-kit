@@ -24,9 +24,8 @@
     "react-dom": "^18.2.0"
   },
   "dependencies": {
-    "@h-devkit/styles": "workspace:*",
+    "@yu-kit/styles": "workspace:*",
     "filter": "^0.1.1",
-    "h-flexiable": "^0.2.2",
     "postcss": "^8.4.20",
     "postcss-pxtorem": "^6.0.0"
   }

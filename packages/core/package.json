@@ -1,5 +1,5 @@
 {
-  "name": "@h-devkit/core",
+  "name": "@yu-kit/core",
   "version": "1.0.0",
   "description": "",
   "main": "./dist/index.js",
@@ -28,8 +28,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@h-devkit/shared": "workspace:*",
-    "@h-devkit/styles": "workspace:^1.0.0",
+    "@yu-kit/shared": "workspace:*",
+    "@yu-kit/styles": "workspace:^1.0.0",
     "filter": "^0.1.1",
     "test": "^3.2.1"
   }

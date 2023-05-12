@@ -1,4 +1,4 @@
-@import './variables';
+@import url('./variables');
 
 /* 隐藏滚动条 */
 @mixin scroll-bar-hidden() {
@@ -9,6 +9,7 @@
     display: none; /* Chrome Safari */
   }
 }
+
 @mixin regular-font($color) {
   font-family: AvenirNext-Regular, AvenirNext, sans-serif;
   font-size: $font-body-m;
