@@ -1,9 +1,12 @@
-const Guide = [{ text: 'Get Started', link: '/guide/' }];
+const Guide = [{ text: '快速开始', link: '/guide/' }];
 
-const functions = [Guide, { text: 'getDevice', link: '/ElementHandler/' }];
+const functions = [
+  { text: '组件处理器', link: '/ElementHandler/' },
+  { text: '按钮组件', link: '/Button/' },
+];
 
 const DefaultSideBar = [
-  { text: '指导', items: Guide },
+  { text: '指南', items: Guide },
   { text: '组件文档', items: functions },
 ];
 
@@ -16,11 +19,7 @@ export default {
     lastUpdated: true,
     lastUpdatedText: '最后修改时间',
     socialLinks: [{ icon: 'github', link: 'https://github.com/encodedecod/yu-kit/' }],
-    nav: [
-      { text: '指南', link: '/guide/' },
-      { text: '组件处理器', link: '/ElementHandler/' },
-      { text: '按钮组件', link: '/Button/' },
-    ],
+    nav: Guide,
     // 侧边栏
     sidebar: {
       '/guide/': [
