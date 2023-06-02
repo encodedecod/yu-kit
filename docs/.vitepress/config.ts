@@ -1,23 +1,21 @@
-const Guide = [{ text: 'Get Started', link: '/guide/' }]
+const Guide = [{ text: 'Get Started', link: '/guide/' }];
 
-const functions = [Guide, { text: 'getDevice', link: '/core/getDevice/' }]
+const functions = [Guide, { text: 'getDevice', link: '/core/getDevice/' }];
 
 const DefaultSideBar = [
   { text: '指导', items: Guide },
   { text: '组件文档', items: functions },
-]
+];
 
 export default {
-  base: '/h-devkit/',
-  title: 'h-devkit',
+  base: '/yu-kit/',
+  title: 'yu-kit',
   lang: 'zh-CN',
   themeConfig: {
     logo: '/logo.png',
     lastUpdated: true,
     lastUpdatedText: '最后修改时间',
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/encodedecod/h-devkit/' },
-    ],
+    socialLinks: [{ icon: 'github', link: 'https://github.com/encodedecod/yu-kit/' }],
     nav: [
       { text: '指南', link: '/guide/' },
       { text: '函数集合', link: '/core/getDevice/' },
@@ -38,4 +36,4 @@ export default {
       ],
     },
   },
-}
+};

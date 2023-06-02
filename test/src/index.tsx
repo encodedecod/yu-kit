@@ -1,11 +1,9 @@
-import { createRoot } from 'react-dom/client'
-import App from './App'
-import flexiable from 'h-flexiable'
+import { createRoot } from 'react-dom/client';
+import App from './App';
 
-import '@h-devkit/styles/reset.scss'
+import '@yu-kit/styles/reset.scss';
 
-flexiable()
-const root = document.getElementById('root')
+const root = document.getElementById('root');
 if (root) {
-  createRoot(root).render(<App />)
+  createRoot(root).render(<App />);
 }

@@ -3,16 +3,15 @@
     ## 安装
 
     ```bash
-    npm i @vmejs/core
+    npm i @yu-kit/shared
     ```
 
 
     ## 简单使用
 
     ``` ts
-      import { getDevice } from "@vmejs/core"
+      import { ElementHandler } from "@yu-kit/shared"
 
-      const browser = getDevice()
-
+    
       // do something
     ```

@@ -1,13 +1,11 @@
-@import '@h-devkit/styles/variables';
+@import '@yu-kit/styles/variables';
 
 :root {
   --theme-color: #ed0202;
   /* stylelint-disable value-keyword-case */
-  --adm-font-family: AvenirNext-Regular, AvenirNext, Inter, Avenir, Helvetica,
-    Arial, sans-serif;
+  --adm-font-family: AvenirNext-Regular, AvenirNext, Inter, Avenir, Helvetica, Arial, sans-serif;
 
-  font-family: AvenirNext-Regular, AvenirNext, Inter, Avenir, Helvetica, Arial,
-    sans-serif !important;
+  font-family: AvenirNext-Regular, AvenirNext, Inter, Avenir, Helvetica, Arial, sans-serif !important;
   color: $font-color-black;
   background: $white;
   font-synthesis: none;

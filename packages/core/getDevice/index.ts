@@ -1,4 +1,4 @@
-import { isString } from '@h-devkit/shared'
+import { isString } from '@yu-kit/shared';
 
 export const DEVICES = [
   {
@@ -43,10 +43,7 @@ export const DEVICES = [
     vendor: 'Xiaomi',
   },
   {
-    regs: [
-      /; (\w+) bui.+ oppo/i,
-      /\b(cph[12]\d{3}|p(?:af|c[al]|d\w|e[ar])[mt]\d0|x9007|a101op)\b/i,
-    ],
+    regs: [/; (\w+) bui.+ oppo/i, /\b(cph[12]\d{3}|p(?:af|c[al]|d\w|e[ar])[mt]\d0|x9007|a101op)\b/i],
     vendor: 'OPPO',
   },
   {
@@ -54,12 +51,10 @@ export const DEVICES = [
     vendor: 'Vivo',
   },
   {
-    regs: [
-      /(Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i,
-    ],
+    regs: [/(Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i],
     vendor: 'other',
   },
-]
+];
 
 /**
  * 获取设备类型与供应商
@@ -70,30 +65,30 @@ export const getDevice = (ua?: string) => {
   const device = {
     model: '',
     vendor: '',
-  }
+  };
 
   if (!isString(ua)) {
     // node runtimes env
-    if (global) return device
+    if (global) return device;
 
-    ua = window.navigator.userAgent
+    ua = window.navigator.userAgent;
   }
 
-  device.model = 'pc'
-  device.vendor = 'other'
+  device.model = 'pc';
+  device.vendor = 'other';
 
   for (let i = 0; i <= DEVICES.length; i++) {
-    if (!DEVICES[i]) break
+    if (!DEVICES[i]) break;
 
-    const { regs, vendor } = DEVICES[i]
-    const findVal = regs.find(item => item.exec(ua as string))
+    const { regs, vendor } = DEVICES[i];
+    const findVal = regs.find((item) => item.exec(ua as string));
 
     if (findVal) {
-      device.model = 'mobile'
-      device.vendor = vendor
-      break
+      device.model = 'mobile';
+      device.vendor = vendor;
+      break;
     }
   }
 
-  return device
-}
+  return device;
+};
