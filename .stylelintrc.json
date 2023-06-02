@@ -1,27 +1,14 @@
 {
-  "extends": ["stylelint-config-standard", "stylelint-config-recommended-scss", "stylelint-config-prettier"],
-  "plugins": ["stylelint-scss"],
-  "ignoreFiles": ["node_modules/**/*", "**/*.tmpl.css", "**/*.tmpl.scss", "**/*.map", "**/*.min.css"],
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-recess-order"
+  ],
+  "plugins": [
+    "stylelint-scss"
+  ],
   "rules": {
-    "at-rule-no-unknown": null,
-    "scss/at-rule-no-unknown": true,
-    "declaration-empty-line-before": null,
-    "selector-list-comma-newline-after": null,
-    "no-descending-specificity": null,
-    "import-notation": null,
-    "keyframe-selector-notation": null,
-    "media-feature-range-notation": null,
-    "declaration-block-no-duplicate-properties": [
-      true,
-      {
-        "ignore": ["consecutive-duplicates-with-different-syntaxes"]
-      }
-    ],
-    "selector-pseudo-class-no-unknown": [
-      true,
-      {
-        "ignorePseudoClasses": ["global"]
-      }
-    ]
+    "selector-pseudo-class-no-unknown": null,
+    "at-rule-no-unknown": null
   }
 }
+
