@@ -1,4 +1,4 @@
-import HButton from '../../cli/shared/esm/components/';
+import HButton from '../../packages/shared/components/HButton';
 
 import './App.scss';
 const App = () => {

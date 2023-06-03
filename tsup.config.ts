@@ -14,7 +14,6 @@ const baseConfigs = [
     sourcemap: true, // 添加 sourcemap 文件
     clean: true, // 是否先清除打包的目录，例如 dist
     format: ['cjs'] as Format[],
-    target: ['esnext'],
   },
   {
     dts: true, // 添加 .d.ts 文件
@@ -24,7 +23,6 @@ const baseConfigs = [
     sourcemap: true, // 添加 sourcemap 文件
     clean: true, // 是否先清除打包的目录，例如 dist
     format: ['esm'] as Format[],
-    target: ['esnext'],
   },
 ];
 
@@ -36,11 +34,13 @@ const myReadfile = () => {
     deep: Infinity,
     ignore: [`**/dist/**`, `**/node_modules/**`, `**/*.test.ts`],
   });
+
   const configs: Options[] = [];
   baseConfigs.forEach((baseConfig) =>
     entries.forEach((file) => {
-      const outDir = file.replace(/(packages\/)(.*?)\//, `cli/$2/${baseConfig.format[0]}/`).replace(/\/index.(ts|tsx)$/, '');
+      const outDir = file.replace(/(packages\/)(.*?)\//, `packages/$2/cli/${baseConfig.format[0]}/`).replace(/\/index.(ts|tsx)$/, '');
       configs.push({
+        target: ['esnext'],
         entry: [file],
         outDir: outDir,
         loader: {

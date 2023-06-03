@@ -1,16 +1,15 @@
 {
   "name": "@yu-kit/shared",
-  "version": "1.0.0",
+  "version": "1.0.6",
   "description": "",
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "unpkg": "./dist/index.global.js",
-  "types": "./dist/index.d.ts",
+  "main": "./cli/cjs/index.js",
+  "module": "./cli/esm/index.mjs",
+  "types": "./cli/cjs/index.d.ts",
   "exports": {
     ".": {
-      "require": "./dist/index.js",
-      "import": "./dist/index.mjs",
-      "types": "./dist/index.d.ts"
+      "require": "./cli/cjs/index.js",
+      "import": "./cli/esm/index.mjs",
+      "types": "./cli/cjs/index.d.ts"
     },
     "./*": "./*"
   },
@@ -18,6 +17,9 @@
     "node": ">=14",
     "pnpm": ">=7.0.0"
   },
+  "files": [
+    "cli"
+  ],
   "publishConfig": {
     "access": "public"
   },
@@ -28,15 +30,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/react": "^18.0.26",
-    "@yu-kit/styles": "workspace:*",
     "classnames": "^2.3.2",
-    "filter": "^0.1.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "test": "^3.2.1"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/react-dom": "^18.0.6"
+    "@types/react-dom": "^18.0.6",
+    "@yu-kit/styles": "workspace:*",
+    "@types/react": "^18.0.26"
   }
 }

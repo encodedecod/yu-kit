@@ -9,10 +9,5 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@yu-kit/styles": "workspace:^1.0.0",
-    "filter": "^0.1.1",
-    "test": "^3.2.1"
-  }
+  "license": "ISC"
 }
