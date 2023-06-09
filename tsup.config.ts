@@ -32,7 +32,7 @@ const myReadfile = () => {
   const entries = fg.sync([`packages/**/index.ts`, `packages/**/index.tsx`], {
     onlyFiles: false,
     deep: Infinity,
-    ignore: [`**/dist/**`, `**/node_modules/**`, `**/*.test.ts`],
+    ignore: [`**/cli/**`, `**/node_modules/**`, `**/*.test.ts`],
   });
 
   const configs: Options[] = [];
