@@ -4,10 +4,15 @@ const functions = [
   { text: '组件处理器', link: '/ElementHandler/' },
   { text: '按钮组件', link: '/Button/' },
 ];
+const hooks = [
+  { text: 'useCallback', link: '/hooks/useCallback' },
+  { text: 'useStates', link: '/hooks/useStates' },
+]
 
 const DefaultSideBar = [
   { text: '指南', items: Guide },
   { text: '组件文档', items: functions },
+  { text: 'hooks', items: hooks },
 ];
 
 export default {
@@ -35,6 +40,18 @@ export default {
         },
       ],
       '/Button/': [
+        {
+          text: '',
+          items: DefaultSideBar,
+        },
+      ],
+      '/hooks/useCallback': [
+        {
+          text: '',
+          items: DefaultSideBar,
+        },
+      ],
+      '/hooks/useStates': [
         {
           text: '',
           items: DefaultSideBar,
