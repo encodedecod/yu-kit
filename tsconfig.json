@@ -17,14 +17,18 @@
     "noUnusedLocals": true,
     "jsx": "react-jsx",
     "paths": {
-      "@yu-kit/shared": ["./packages/shared/index.ts"],
-      "@yu-kit/shared/*": ["./packages/shared/*"],
-      "@yu-kit/core": ["./packages/core/index.ts"],
-      "@yu-kit/core/*": ["./packages/core/*"],
+      "@yu-kit/components": ["./packages/components/index.ts"],
+      "@yu-kit/components/*": ["./packages/components/*"],
+      "@yu-kit/hooks": ["./packages/hooks/index.ts"],
+      "@yu-kit/hooks/*": ["./packages/hooks/*"],
+      "@yu-kit/kit": ["./packages/kit/index.ts"],
+      "@yu-kit/kit/*": ["./packages/kit/*"],
+      "@yu-kit/utils": ["./packages/utils/index.ts"],
+      "@yu-kit/utils/*": ["./packages/utils/*"],
       "@yu-kit/styles": ["./packages/styles"],
       "@yu-kit/styles/*": ["./packages/styles/*"]
     }
   },
   "include": ["packages", "docs/.vitepress/*.ts", "vitest.config.ts", "*.d.ts"],
-  "exclude": ["node_modules", "**/**/*.md", "**/dist", "dist"]
+  "exclude": ["node_modules", "**/**/*.md", "**/cli", "cli"]
 }
