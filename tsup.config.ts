@@ -29,7 +29,7 @@ const baseConfigs = [
 const filePaths: { text: string; path: string }[] = [];
 
 const myReadfile = () => {
-  const entries = fg.sync([`packages/**/index.ts`, `packages/**/index.tsx`], {
+  const entries = fg.sync([`./packages/**/index.ts`, `./packages/**/index.tsx`], {
     onlyFiles: false,
     deep: Infinity,
     ignore: [`**/cli/**`, `**/node_modules/**`, `**/*.test.ts`],
@@ -38,9 +38,8 @@ const myReadfile = () => {
   const configs: Options[] = [];
   baseConfigs.forEach((baseConfig) =>
     entries.forEach((file) => {
-      const outDir = file.replace(/(packages\/)(.*?)\//, `packages/$2/cli/${baseConfig.format[0]}/`).replace(/\/index.(ts|tsx)$/, '');
+      const outDir = file.replace(/(packages\/)(.*?)\//, `./packages/$2/cli/${baseConfig.format[0]}/`).replace(/\/index.(ts|tsx)$/, '');
       configs.push({
-        publicDir:'./',
         target: ['esnext'],
         entry: [file],
         outDir: outDir,
