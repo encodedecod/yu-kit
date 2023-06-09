@@ -57,7 +57,7 @@ jobs:
           NODE_OPTIONS: --max-old-space-size=4096
       - name: Publish to NPM  # 推送到 NPM 上
         run: |
-          npm config set //registry.npmjs.org/:_authToken=$DEPLOY
-          npm publish
+          pnpm config set //registry.npmjs.org/:_authToken=$NPM_PUBLISH
+          pnpm publish
         env:
-          NPM_TOKEN: ${{ secrets.DEPLOY }}
+          NPM_TOKEN: ${{ secrets.NPM_PUBLISH }}
