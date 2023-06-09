@@ -8,7 +8,6 @@ export default defineConfig({
   resolve: {
     alias: {
       '@yu-kit/shared': resolve(__dirname, 'packages/shared/index.ts'),
-      '@yu-kit/core': resolve(__dirname, 'packages/core/index.ts'),
     },
   },
 });
