@@ -40,6 +40,7 @@ const myReadfile = () => {
     entries.forEach((file) => {
       const outDir = file.replace(/(packages\/)(.*?)\//, `packages/$2/cli/${baseConfig.format[0]}/`).replace(/\/index.(ts|tsx)$/, '');
       configs.push({
+        publicDir:'./',
         target: ['esnext'],
         entry: [file],
         outDir: outDir,
