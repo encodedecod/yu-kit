@@ -54,7 +54,6 @@ jobs:
         run: pnpm build
         env:
           DOC_ENV: preview
-          NODE_OPTIONS: --max-old-space-size=4096
       - name: Publish to NPM  # 推送到 NPM 上
         run: |
           pnpm config set //registry.npmjs.org/:_authToken=$NPM_PUBLISH
