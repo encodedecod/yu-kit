@@ -1,0 +1,38 @@
+{
+  "name": "@yu-kit/hooks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./cli/cjs/index.js",
+  "module": "./cli/esm/index.mjs",
+  "types": "./cli/cjs/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./cli/cjs/index.js",
+      "import": "./cli/esm/index.mjs",
+      "types": "./cli/cjs/index.d.ts"
+    },
+    "./*": "./*"
+  },
+  "engines": {
+    "node": ">=14",
+    "pnpm": ">=7.0.0"
+  },
+  "files": [
+    "cli"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.26"
+  }
+}

@@ -7,7 +7,10 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@yu-kit/shared': resolve(__dirname, 'packages/shared/index.ts'),
+      '@yu-kit/utils': resolve(__dirname, 'packages/utils/index.ts'),
+      '@yu-kit/kit': resolve(__dirname, 'packages/kit/index.ts'),
+      '@yu-kit/components': resolve(__dirname, 'packages/components/index.ts'),
+      '@yu-kit/hooks': resolve(__dirname, 'packages/hooks/index.ts'),
     },
   },
 });
