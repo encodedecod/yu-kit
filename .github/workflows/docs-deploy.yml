@@ -57,6 +57,6 @@ jobs:
       - name: Publish to NPM  # 推送到 NPM 上
         run: |
           pnpm config set //registry.npmjs.org/:_authToken=$NPM_PUBLISH
-          pnpm publish
+          pnpm release
         env:
           NPM_PUBLISH: ${{ secrets.NPM_PUBLISH }}
