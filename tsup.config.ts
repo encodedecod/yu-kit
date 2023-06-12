@@ -65,8 +65,8 @@ const myReadfile = () => {
               build.onEnd((result) => {
                 result.outputFiles?.forEach((item) => {
                   if (
-                    /index.(mjs|js|cjs)$/.test(item.path) &&
-                    result.outputFiles?.find((outputItem) => outputItem.path === item.path.replace('.js', '.css'))
+                    /index.(mjs|js)$/.test(item.path) &&
+                    result.outputFiles?.find((outputItem) => outputItem.path === item.path.replace(/(.js|.mjs)$/, '.css'))
                   ) {
                     filePaths.push({ text: item.text, path: item.path });
                   }
@@ -76,13 +76,19 @@ const myReadfile = () => {
           },
         ],
         onSuccess: async () => {
-          filePaths?.forEach((item) => {
-            let data = item.text;
-            data = `import "./index.css"; ${data}`;
-            fs.writeFileSync(item.path, data, {
-              encoding: 'utf-8',
-            });
-          });
+          const item = filePaths[0]
+          if(item?.path){
+            fs.access(item.path,(err)=>{
+              if(!err){
+                let data = item.text;
+                data = `import "./index.css"; ${data}`;
+                fs.writeFileSync(item.path, `import "./index.css"; ${item.text}`, {
+                  encoding: 'utf-8',
+                });
+                filePaths.shift()
+              }
+            })
+          }
         },
       });
     }),
