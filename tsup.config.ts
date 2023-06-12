@@ -26,7 +26,6 @@ const baseConfigs = [
   },
 ];
 
-const filePaths: { text: string; path: string }[] = [];
 
 const myReadfile = () => {
   const entries = fg.sync([`./packages/**/index.ts`, `./packages/**/index.tsx`], {
@@ -34,7 +33,7 @@ const myReadfile = () => {
     deep: Infinity,
     ignore: [`**/cli/**`, `**/node_modules/**`, `**/*.test.ts`],
   });
-
+  const filePaths: { text: string; path: string }[] = [];
   const configs: Options[] = [];
   baseConfigs.forEach((baseConfig) =>
     entries.forEach((file) => {
