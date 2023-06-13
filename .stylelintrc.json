@@ -1,14 +1,8 @@
 {
-  "extends": [
-    "stylelint-config-standard",
-    "stylelint-config-recess-order"
-  ],
-  "plugins": [
-    "stylelint-scss"
-  ],
+  "extends": ["stylelint-config-standard", "stylelint-config-recess-order"],
+  "plugins": ["stylelint-scss"],
   "rules": {
     "selector-pseudo-class-no-unknown": null,
     "at-rule-no-unknown": null
   }
 }
-

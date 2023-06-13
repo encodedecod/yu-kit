@@ -9,7 +9,7 @@ category: UA
 ## Usage
 
 ```ts
-import { useStates } from '@yu-kit/hooks';
+import { useStates } from '@yu-kit/hooks'
 ```
 
 ### 参数

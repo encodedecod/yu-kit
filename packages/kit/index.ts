@@ -1,1 +1,1 @@
-export  { default as ElementHandler }  from './ElementHandler';
+export { default as ElementHandler } from './ElementHandler'

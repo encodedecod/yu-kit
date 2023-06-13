@@ -28,7 +28,9 @@ const ElementHandler: ElementHandlerProps = (ReactComponent) => {
    * @param {HTMLDivElement} container
    */
   const unmount = (root: ReactDom.Root, container: HTMLDivElement) => {
-    if (!container || !root) { return }
+    if (!container || !root) {
+      return
+    }
     root.unmount()
     container.parentNode?.removeChild(container)
   }
@@ -42,7 +44,9 @@ const ElementHandler: ElementHandlerProps = (ReactComponent) => {
       const root = rootArr.pop()
       const ref = refArr.pop()
       ref?.current?.handleClose()
-      if (!container || !root) { break }
+      if (!container || !root) {
+        break
+      }
       setTimeout(() => {
         unmount(root, container)
       }, 500)
@@ -72,14 +76,14 @@ const ElementHandler: ElementHandlerProps = (ReactComponent) => {
         useImperativeHandle(
           componentRef,
           () => ({
-            handleClose,
+            handleClose
           }),
-          [],
+          []
         )
         return <ReactComponent visible={visible} {...props} />
       }
       const RefReactComponent = React.forwardRef(SureReactComponent)
-      const componentRef = React.createRef<{ handleClose:() => void }>()
+      const componentRef = React.createRef<{ handleClose: () => void }>()
       refArr.push(componentRef)
       // 这里默认传值visible
       createdRoot.render(<RefReactComponent ref={componentRef} />)
@@ -112,18 +116,18 @@ const ElementHandler: ElementHandlerProps = (ReactComponent) => {
         useImperativeHandle(
           componentRef,
           () => ({
-            handleClose,
+            handleClose
           }),
-          [],
+          []
         )
         return <ReactComponent visible={visible} {...props} />
       }
       const RefReactComponent = React.forwardRef(SureReactComponent)
-      const componentRef = React.createRef<{ handleClose:() => void }>()
+      const componentRef = React.createRef<{ handleClose: () => void }>()
       refArr.push(componentRef)
       // 这里默认传值visible
       createdRoot.render(<RefReactComponent ref={componentRef} />)
-    },
+    }
   }
 }
 

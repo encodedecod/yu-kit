@@ -9,7 +9,7 @@ category: UA
 ## Usage
 
 ```ts
-import { copyToClipboard } from '@yu-kit/utils';
+import { copyToClipboard } from '@yu-kit/utils'
 ```
 
 ## 文档

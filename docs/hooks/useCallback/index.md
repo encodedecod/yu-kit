@@ -5,7 +5,7 @@
 ## Usage
 
 ```ts
-import { useCallback } from '@yu-kit/hooks';
+import { useCallback } from '@yu-kit/hooks'
 ```
 
 ## 描述

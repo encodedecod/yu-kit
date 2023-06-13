@@ -1,1 +1,1 @@
-declare module 'h-flexiable';
+declare module 'h-flexiable'

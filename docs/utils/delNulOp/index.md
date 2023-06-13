@@ -9,7 +9,7 @@ category: UA
 ## Usage
 
 ```ts
-import { delNulOp } from '@yu-kit/utils';
+import { delNulOp } from '@yu-kit/utils'
 ```
 
 ## 文档

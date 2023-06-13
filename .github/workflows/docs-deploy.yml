@@ -50,11 +50,11 @@ jobs:
           target_branch: gh-pages
           # 部署目录为 vitepress 的默认输出目录
           build_dir: docs/.vitepress/dist
-      - name: NPM BUILD KIT  # 打包工具的cli包
+      - name: NPM BUILD KIT # 打包工具的cli包
         run: pnpm build
         env:
           DOC_ENV: preview
-      - name: Publish to NPM  # 推送到 NPM 上
+      - name: Publish to NPM # 推送到 NPM 上
         run: |
           pnpm config set //registry.npmjs.org/:_authToken=$NPM_PUBLISH
           pnpm release
