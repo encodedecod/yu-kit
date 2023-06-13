@@ -1,9 +1,9 @@
-import { defineConfig, Format, Options } from 'tsup';
-import fg from 'fast-glob';
-import { sassPlugin } from 'esbuild-sass-plugin';
-import fs from 'fs';
-import postcss from 'postcss';
-import autoprefixer from 'autoprefixer';
+import { defineConfig, Format, Options } from 'tsup'
+import fg from 'fast-glob'
+import { sassPlugin } from 'esbuild-sass-plugin'
+import fs from 'fs'
+import postcss from 'postcss'
+import autoprefixer from 'autoprefixer'
 
 const baseConfigs = [
   {
@@ -13,7 +13,7 @@ const baseConfigs = [
     splitting: false,
     sourcemap: false, // 添加 sourcemap 文件
     clean: true, // 是否先清除打包的目录，例如 dist
-    format: ['cjs'] as Format[],
+    format: ['cjs'] as Format[]
   },
   {
     dts: true, // 添加 .d.ts 文件
@@ -22,22 +22,21 @@ const baseConfigs = [
     splitting: false,
     sourcemap: false, // 添加 sourcemap 文件
     clean: true, // 是否先清除打包的目录，例如 dist
-    format: ['esm'] as Format[],
-  },
-];
-
+    format: ['esm'] as Format[]
+  }
+]
 
 const myReadfile = () => {
   const entries = fg.sync([`./packages/**/index.ts`, `./packages/**/index.tsx`], {
     onlyFiles: false,
     deep: Infinity,
-    ignore: [`**/cli/**`, `**/node_modules/**`, `**/*.test.ts`],
-  });
-  const filePaths: { text: string; path: string }[] = [];
-  const configs: Options[] = [];
+    ignore: [`**/cli/**`, `**/node_modules/**`, `**/*.test.ts`]
+  })
+  const filePaths: { text: string; path: string }[] = []
+  const configs: Options[] = []
   baseConfigs.forEach((baseConfig) =>
     entries.forEach((file) => {
-      const outDir = file.replace(/(packages\/)(.*?)\//, `./packages/$2/cli/${baseConfig.format[0]}/`).replace(/\/index.(ts|tsx)$/, '');
+      const outDir = file.replace(/(packages\/)(.*?)\//, `./packages/$2/cli/${baseConfig.format[0]}/`).replace(/\/index.(ts|tsx)$/, '')
       configs.push({
         target: ['esnext'],
         entry: [file],
@@ -49,15 +48,15 @@ const myReadfile = () => {
           '.sass': 'css',
           '.less': 'css',
           '.css': 'css',
-          '.tsx': 'tsx',
+          '.tsx': 'tsx'
         },
         ...baseConfig,
         esbuildPlugins: [
           sassPlugin({
             async transform(source) {
-              const { css } = await postcss([autoprefixer]).process(source);
-              return css;
-            },
+              const { css } = await postcss([autoprefixer]).process(source)
+              return css
+            }
           }),
           {
             name: 'scss-plugin',
@@ -68,32 +67,32 @@ const myReadfile = () => {
                     /index.(mjs|js)$/.test(item.path) &&
                     result.outputFiles?.find((outputItem) => outputItem.path === item.path.replace(/(.js|.mjs)$/, '.css'))
                   ) {
-                    filePaths.push({ text: item.text, path: item.path });
+                    filePaths.push({ text: item.text, path: item.path })
                   }
-                });
-              });
-            },
-          },
+                })
+              })
+            }
+          }
         ],
         onSuccess: async () => {
           const item = filePaths[0]
-          if(item?.path){
-            fs.access(item.path,(err)=>{
-              if(!err){
-                let data = item.text;
-                data = `import "./index.css"; ${data}`;
+          if (item?.path) {
+            fs.access(item.path, (err) => {
+              if (!err) {
+                let data = item.text
+                data = `import "./index.css"; ${data}`
                 fs.writeFileSync(item.path, `import "./index.css"; ${item.text}`, {
-                  encoding: 'utf-8',
-                });
+                  encoding: 'utf-8'
+                })
                 filePaths.shift()
               }
             })
           }
-        },
-      });
-    }),
-  );
-  return defineConfig(configs);
-};
+        }
+      })
+    })
+  )
+  return defineConfig(configs)
+}
 
-export default myReadfile();
+export default myReadfile()

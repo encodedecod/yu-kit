@@ -1,9 +1,9 @@
-import { createRoot } from 'react-dom/client';
-import App from './App';
+import { createRoot } from 'react-dom/client'
+import App from './App'
 
-import '@yu-kit/styles/reset.scss';
+import '@yu-kit/styles/reset.scss'
 
-const root = document.getElementById('root');
+const root = document.getElementById('root')
 if (root) {
-  createRoot(root).render(<App />);
+  createRoot(root).render(<App />)
 }

@@ -6,7 +6,7 @@
 import { useRef, useState } from 'react'
 
 /** useMemo 实现 */
-export default function useMemo<T,U>(fn: () => T, deps?: U[]): T {
+export default function useMemo<T, U>(fn: () => T, deps?: U[]): T {
   const [value] = useState(fn)
   const prev = useRef(value)
   const prevDeps = useRef(deps)

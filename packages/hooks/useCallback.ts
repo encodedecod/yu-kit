@@ -6,7 +6,7 @@
 import { useRef, useState } from 'react'
 
 /** useCallback 实现 */
-export default function useCallback<T extends Function,U>(fn: T, deps?: U[]): T {
+export default function useCallback<T extends Function, U>(fn: T, deps?: U[]): T {
   const [value] = useState<T>(() => {
     return fn
   })

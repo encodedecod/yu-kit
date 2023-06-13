@@ -9,7 +9,7 @@ category: UA
 ## Usage
 
 ```ts
-import { downloadFile } from '@yu-kit/utils';
+import { downloadFile } from '@yu-kit/utils'
 ```
 
 ## 文档

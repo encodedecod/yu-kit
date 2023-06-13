@@ -9,8 +9,8 @@ category: UA
 ## Usage
 
 ```ts
-import { ElementHandler } from '@yu-kit/kit';
-const { show, hide, info } = ElementHandler(组件);
+import { ElementHandler } from '@yu-kit/kit'
+const { show, hide, info } = ElementHandler(组件)
 ```
 
 ## 文档

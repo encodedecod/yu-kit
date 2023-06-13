@@ -5,10 +5,9 @@
 
 import { useState } from 'react'
 
-
-export default function useLoading<V>(fn: (...arg:V[])=>Promise<void>): [boolean, (...arg:V[])=>Promise<void>] {
-  const [loading, setLoading] = useState(false);
-  const call = async function call(...args:V[]) {
+export default function useLoading<V>(fn: (...arg: V[]) => Promise<void>): [boolean, (...arg: V[]) => Promise<void>] {
+  const [loading, setLoading] = useState(false)
+  const call = async function call(...args: V[]) {
     if (loading) {
       return
     }

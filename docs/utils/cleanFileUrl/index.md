@@ -9,7 +9,7 @@ category: UA
 ## Usage
 
 ```ts
-import { cleanFileUrl } from '@yu-kit/utils';
+import { cleanFileUrl } from '@yu-kit/utils'
 ```
 
 ## 文档

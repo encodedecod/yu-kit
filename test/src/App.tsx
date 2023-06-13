@@ -1,6 +1,6 @@
-import HButton from '../../packages/shared/components/HButton';
+import HButton from '../../packages/shared/components/HButton'
 
-import './App.scss';
+import './App.scss'
 const App = () => {
   return (
     <div className="test-content">
@@ -8,7 +8,7 @@ const App = () => {
         <HButton type="submit">ferfe</HButton>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App

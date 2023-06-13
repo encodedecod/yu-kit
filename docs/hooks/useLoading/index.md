@@ -9,7 +9,7 @@ category: UA
 ## Usage
 
 ```ts
-import { useLoading } from '@yu-kit/hooks';
+import { useLoading } from '@yu-kit/hooks'
 ```
 
 ## 文档

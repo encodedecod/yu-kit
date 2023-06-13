@@ -9,7 +9,7 @@ category: UA
 ## Usage
 
 ```ts
-import { useMemo } from '@yu-kit/hooks';
+import { useMemo } from '@yu-kit/hooks'
 ```
 
 ## 文档
