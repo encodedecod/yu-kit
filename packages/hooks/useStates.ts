@@ -6,16 +6,16 @@
 import { useCallback, useState } from 'react'
 
 
-function useStates<T extends object,V>(initState: T): [T, (values: V[]) => void] {
-  const [state, updateState] = useState(initState)
+function useStates<T extends object>(initState: T): [T, (values: (keyof T)[]) => void] {
+  const [state, updateState] = useState(initState);
 
-  const setState = useCallback((values:V[]) => {
+  const setState = useCallback((values: (keyof T)[]) => {
     updateState((state: T) => {
-      return { ...state, ...values }
-    })
-  }, [])
+      return { ...state, ...values };
+    });
+  }, []);
 
-  return [state, setState]
+  return [state, setState];
 }
 
 export default useStates

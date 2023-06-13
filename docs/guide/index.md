@@ -1,17 +1,36 @@
-    # 快速开始
+# 快速开始
 
-    ## 安装
+## 安装
 
-    ```bash
-    npm i @yu-kit/shared
-    ```
+### 组件库
 
+```bash
+ npm i @yu-kit/components
+```
 
-    ## 简单使用
+### hooks 库
 
-    ``` ts
-      import { ElementHandler } from "@yu-kit/shared"
+```bash
+ npm i @yu-kit/hooks
+```
 
-    
-      // do something
-    ```
+### 工具库
+
+```bash
+ npm i @yu-kit/kit
+```
+
+### 函数库
+
+```bash
+ npm i @yu-kit/utils
+```
+
+## 简单使用
+
+```ts
+import { ElementHandler } from '@yu-kit/kit'
+import { useLoading } = from '@yu-kit/hooks'
+import { Button } = from '@yu-kit/components'
+import { interval } = from '@yu-kit/utils'
+```

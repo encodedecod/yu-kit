@@ -37,12 +37,12 @@ export  const interval = (fn: () => void, time: number) => {
 }
 
 // 访问剪切板 复制
-export const copyToClipboard = (text: string, showMessage = true) => {
+export const copyToClipboard = (text: string) => {
   new Promise((resolve, reject) => {
     if (navigator.clipboard) {
       navigator.clipboard
         .writeText(text)
-        .then(() => showMessage && resolve('复制成功'))
+        .then(() => resolve('复制成功'))
         .catch(() => reject('剪切板不可用'));
     } else {
       try {
@@ -55,7 +55,7 @@ export const copyToClipboard = (text: string, showMessage = true) => {
         textarea.select();
         document.execCommand('copy', true);
         document.body.removeChild(textarea);
-        showMessage && resolve('复制成功');
+        resolve('复制成功');
       } catch (error) {
         reject('剪切板不可用');
       }
@@ -76,7 +76,7 @@ export const downloadFile = (url:string, title:string) => {
 
 
 export type DelNulOp = <T>(source:Record<string,T>)=>Record<string,T>
-export const   _delNulOp:DelNulOp = (source) =>{
+export const   delNulOp:DelNulOp = (source) =>{
   if (typeof source !== 'object') {
     return source;
   }

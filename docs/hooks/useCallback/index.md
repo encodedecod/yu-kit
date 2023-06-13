@@ -1,22 +1,23 @@
-    ---
-    category: UA
-    ---
+# useCallback
 
-    # useCallback
-    模拟usCallback
+模拟 usCallback
 
-    ## Usage
+## Usage
 
-    ``` ts
-       import { useCallback } from "@yu-kit/hooks"
-      // do something
-    ```
+```ts
+import { useCallback } from '@yu-kit/hooks';
+```
 
-    ## 文档
+## 描述
 
-    ### 参数1 函数：必选
-        ```
-        
-        ```
-    
-    ### 参数2 依赖数组：必选
+### 参数 1
+
+```
+函数：必选
+```
+
+### 参数 2
+
+```
+依赖数组：必选
+```
