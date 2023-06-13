@@ -7,12 +7,7 @@ import { useState } from 'react'
 
 
 export default function useLoading<V>(fn: (...arg:V[])=>Promise<void>): [boolean, (...arg:V[])=>Promise<void>] {
-  const [loading, setLoading] = useState(false)
-
-  if (typeof fn !== 'function') {
-    throw new Error('需要传入一个函数')
-  }
-
+  const [loading, setLoading] = useState(false);
   const call = async function call(...args:V[]) {
     if (loading) {
       return

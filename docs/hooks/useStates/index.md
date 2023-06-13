@@ -1,21 +1,31 @@
-    ---
-    category: UA
-    ---
+---
+category: UA
+---
 
-    # useStates
+# useStates
+
     模拟useState,可以控制多个state
 
-    ## Usage
+## Usage
 
-    ``` ts
-       import { useStates } from "@yu-kit/hooks"
-      // do something
-    ```
+```ts
+import { useStates } from '@yu-kit/hooks';
+```
 
+### 参数
 
-    ### 参数 任意值：必选
+```
+T 任意值：必选
+```
 
+### 返回 1
 
-    ### 返回1 多个状态
-    
-    ### 返回2 状态设置
+```
+T:object 包含多个状态的对象
+```
+
+### 返回 2
+
+```
+(values: (keyof T)[]) => void 状态设置函数
+```

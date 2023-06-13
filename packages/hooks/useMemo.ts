@@ -11,10 +11,6 @@ export default function useMemo<T,U>(fn: () => T, deps?: U[]): T {
   const prev = useRef(value)
   const prevDeps = useRef(deps)
 
-  if (typeof fn !== 'function') {
-    throw new Error('需要传入一个函数')
-  }
-
   /** 如果传的空数组就不在计算，直接返回最初的值 */
   if (deps?.length === 0) {
     return value
