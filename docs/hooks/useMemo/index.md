@@ -6,7 +6,7 @@ category: UA
 
     模拟useMemo
 
-## Usage
+## 使用
 
 ```ts
 import { useMemo } from '@yu-kit/hooks'
@@ -14,14 +14,16 @@ import { useMemo } from '@yu-kit/hooks'
 
 ## 文档
 
-### 参数 1
+### 参数
+
+- `() => T`
 
 ```
 函数：必选
 ```
 
-### 参数 2
+- `U[]`
 
 ```
-依赖数组：必选
+依赖数组
 ```

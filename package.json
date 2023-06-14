@@ -19,11 +19,13 @@
     "type-check": "pnpm --filter './packages/**' type-check",
     "dev": "tsup --watch",
     "build": "tsup",
-    "release": "changeset publish"
+    "release": "changeset publish",
+    "test:dev": "pnpm --filter @yu-kit/test dev"
   },
   "lint-staged": {
     "*.{vue,js,ts,jsx,tsx,json}": [
       "pnpm run lint:js",
+      "pnpm run lint:format",
       "bash -c 'npm run type-check'"
     ]
   },
@@ -40,6 +42,7 @@
     "@typescript-eslint/eslint-plugin": "^5.45.1",
     "@typescript-eslint/parser": "^5.45.1",
     "@vitest/coverage-c8": "^0.25.4",
+    "@yu-kit/kit": "workspace:*",
     "@yu-kit/styles": "workspace:*",
     "autoprefixer": "^10.4.13",
     "esbuild-sass-plugin": "^2.4.3",

@@ -6,7 +6,7 @@ category: UA
 
     用于函数式的隐藏显示组件 让组件的使用不再受组件内部使用的限制
 
-## Usage
+## 使用
 
 ```ts
 import { ElementHandler } from '@yu-kit/kit'
@@ -23,20 +23,20 @@ const { show, hide, info } = ElementHandler(组件)
 
 ### 返回值：
 
-- show
+- `show:(props: T) => void`
 
 ```
 显示组件 参数为组件的props (props: T) => void
 ```
 
-- hide
+- `hide:() => void`
 
 ```
-隐藏组件 () => void
+隐藏组件
 ```
 
-- info
+- `info:(props: T & { duration?: number }) => void`
 
 ```
-一段时间后显示组件 (props: T & { duration?: number }) => void
+一段时间后显示组件
 ```

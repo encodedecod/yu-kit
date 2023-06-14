@@ -1,0 +1,63 @@
+@import '@yu-kit/styles';
+
+/** toast */
+$toast-border-radius: 4px !default;
+$toast-padding-vertical: 12px !default;
+$toast-padding-horizontal: 16px !default;
+$toast-max-width: 298px !default;
+$toast-max-height: 98px !default;
+$toast-mask-width: 100vw !default;
+$toast-mask-height: 100vh !default;
+$toast-position-top: 42% !default;
+$toast-position-left: 50% !default;
+$toast-icon-position-top: 6px !default;
+$toast-position-transform-x: translateX(-50%) !default;
+$toast-font-size: 14px !default;
+$toast-background-color: rgb($font-color-dark, 85%) !default; // 轻提示背景色
+$font-color-white: $color-grey-8 !default; // 用于轻提示灰背景文字
+
+.yu-toast-box {
+  position: relative;
+  z-index: $z-index-m;
+
+  &.mask {
+    position: fixed;
+    top: 0;
+    z-index: $z-index-m;
+    width: 100vw;
+    height: 100vh;
+    background: $toast-background-color;
+  }
+
+  .toast {
+    position: fixed;
+    top: $toast-position-top;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-height: $toast-max-height;
+
+    .toast-box {
+      max-width: $toast-max-width;
+      padding: $toast-padding-vertical $toast-padding-horizontal;
+      background: $toast-background-color;
+      border-radius: $toast-border-radius;
+
+      .text {
+        font-size: $toast-font-size;
+        font-weight: $font-weight-semi-bold;
+        color: $font-color-white;
+        text-align: center;
+        text-overflow: ellipsis;
+        word-wrap: break-word;
+
+        @include multi-ellipsis(3);
+      }
+    }
+
+    .icon {
+      margin-bottom: $toast-icon-position-top;
+    }
+  }
+}

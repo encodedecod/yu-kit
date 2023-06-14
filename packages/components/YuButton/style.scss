@@ -21,16 +21,17 @@ $button-padding-m: 16px !default;
 $button-padding-l: 16px !default;
 $button-type-text-padding: 4px !default;
 
-.hui-button {
+.yu-button {
   position: relative;
   box-sizing: border-box;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   font-weight: $font-weight-medium;
   color: $button-default-color;
   text-align: center;
   white-space: nowrap;
+  cursor: pointer;
 
   .content-wrapper {
     overflow: hidden;
@@ -41,10 +42,27 @@ $button-type-text-padding: 4px !default;
       justify-content: center;
     }
 
-    .hui-button-img {
+    .yu-button-img {
       width: 16px;
       height: 16px;
       margin-right: 7px;
+    }
+
+    .loading-area {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 14px;
+      height: 14px;
+      border: 2px solid;
+      border-right-color: transparent;
+      border-radius: 50%;
+      animation: loader-rotate 1s linear infinite;
+    }
+
+    .loading {
+      color: transparent;
+      opacity: 0;
     }
 
     .button-text {
@@ -59,16 +77,6 @@ $button-type-text-padding: 4px !default;
     }
   }
 
-  .loading-area {
-    position: absolute;
-    width: 14px;
-    height: 14px;
-    border: 2px solid;
-    border-right-color: transparent;
-    border-radius: 50%;
-    animation: loader-rotate 1s linear infinite;
-  }
-
   &.primary {
     background: $theme-color-primary;
 
@@ -79,31 +87,18 @@ $button-type-text-padding: 4px !default;
     }
   }
 
-  &.secondary {
+  &.text {
+    padding: $button-type-text-padding;
     color: $theme-color-primary;
     background: transparent;
 
     &.disabled {
-      font-weight: $font-weight-bold;
-      color: $button-disabled-color;
-      background: transparent;
-    }
-  }
-
-  &.text {
-    width: unset !important;
-    height: unset !important;
-    padding: $button-type-text-padding !important;
-    color: $theme-color-primary;
-    background: transparent !important;
-
-    &.disabled {
       box-sizing: border-box;
-      width: unset !important;
-      height: unset !important;
-      padding: $button-type-text-padding !important;
+      width: unset;
+      height: unset;
+      padding: $button-type-text-padding;
       color: $theme-color-primary;
-      background: transparent !important;
+      background: transparent;
       opacity: 0.3;
     }
 
@@ -119,6 +114,12 @@ $button-type-text-padding: 4px !default;
         visibility: visible;
       }
     }
+  }
+
+  &.border {
+    color: $font-color-dark;
+    background: transparent;
+    border: 1px solid $line-color;
   }
 
   &.small {
@@ -171,78 +172,17 @@ $button-type-text-padding: 4px !default;
     }
   }
 
-  &.submit {
-    width: 100%;
-    height: 48px;
-    background: $theme-color-primary;
-
-    &.disabled {
-      font-weight: $font-weight-bold;
-      color: $font-color-grey;
-      background: $border-color;
-    }
-  }
-
-  &.border {
-    width: 100%;
-    height: 48px;
-    color: $font-color-dark;
-    background: transparent;
-    border: 1px solid $line-color;
-  }
-
   &::after {
     content: unset;
-  }
-
-  &.inline {
-    display: inline-flex;
   }
 }
 
 @keyframes loader-rotate {
   0% {
-    transform: rotate(0);
+    transform: translate(-50%, -50%) rotate(0);
   }
 
   100% {
-    transform: rotate(360deg);
-  }
-}
-
-.bottom-button-bar {
-  // TODO 定位由吸附容器提供
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: $z-index-xs;
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  padding: 16px 16px 36px;
-  background: $white;
-  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%);
-
-  $button-bar-default-text-color: #bbb;
-  $button-bar-font-weight: 600;
-
-  .bottom-button {
-    width: 100%;
-    height: 48px;
-    border-radius: 24px;
-  }
-
-  .button-bar-text {
-    font-family: AvenirNext-DemiBold, AvenirNext, sans-serif;
-    font-size: $font-body-m;
-    font-weight: $button-bar-font-weight;
-    line-height: 19px;
-    color: $button-bar-default-text-color;
-
-    &.button-bar-allow {
-      color: $white;
-    }
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }

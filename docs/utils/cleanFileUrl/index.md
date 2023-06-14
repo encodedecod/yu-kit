@@ -6,7 +6,7 @@ category: UA
 
     去掉url的域名和协议（仅限https格式）
 
-## Usage
+## 使用
 
 ```ts
 import { cleanFileUrl } from '@yu-kit/utils'
@@ -16,7 +16,7 @@ import { cleanFileUrl } from '@yu-kit/utils'
 
 ### 传入参数
 
-- 字符串
+- `string`
 
 ```
 带https的链接
@@ -24,7 +24,7 @@ import { cleanFileUrl } from '@yu-kit/utils'
 
 ### 返回参数
 
-- 字符串
+- `string`
 
 ```
 去掉https的链接

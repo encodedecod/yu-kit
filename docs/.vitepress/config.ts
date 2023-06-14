@@ -1,6 +1,9 @@
 const Guide = [{ text: '快速开始', link: '/guide/' }]
 
-const components = [{ text: '按钮组件', link: '/components/Button/' }]
+const components = [
+  { text: '按钮组件', link: '/components/Button/' },
+  { text: '轻提示组件', link: '/components/Toast/' }
+]
 
 const hooks = [
   { text: 'useCallback', link: '/hooks/useCallback/' },

@@ -1,12 +1,14 @@
-import HButton from '../../packages/shared/components/HButton'
+import { Route, Routes } from 'react-router-dom'
+import Home from '@/pages/home'
 
 import './App.scss'
+
 const App = () => {
   return (
-    <div className="test-content">
-      <div className="test-button">
-        <HButton type="submit">ferfe</HButton>
-      </div>
+    <div className="App">
+      <Routes>
+        <Route path="/*" element={<Home />} />
+      </Routes>
     </div>
   )
 }

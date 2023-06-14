@@ -6,7 +6,7 @@ category: UA
 
     文件下载
 
-## Usage
+## 使用
 
 ```ts
 import { downloadFile } from '@yu-kit/utils'
@@ -16,13 +16,13 @@ import { downloadFile } from '@yu-kit/utils'
 
 ### 参数
 
-- string
+- `string`
 
 ```
 下载链接
 ```
 
-- string
+- `string`
 
 ```
 文件名

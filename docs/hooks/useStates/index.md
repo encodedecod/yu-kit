@@ -6,7 +6,7 @@ category: UA
 
     模拟useState,可以控制多个state
 
-## Usage
+## 使用
 
 ```ts
 import { useStates } from '@yu-kit/hooks'
@@ -14,18 +14,17 @@ import { useStates } from '@yu-kit/hooks'
 
 ### 参数
 
-```
-T 任意值：必选
-```
-
-### 返回 1
+- `object`
 
 ```
-T:object 包含多个状态的对象
+任意值：必选
 ```
 
-### 返回 2
+### 返回参数
+
+- `[object,(values: (keyof T)[]) => void]`
 
 ```
+object 包含多个状态的对象
 (values: (keyof T)[]) => void 状态设置函数
 ```

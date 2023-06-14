@@ -6,7 +6,7 @@ category: UA
 
     使用 requestAnimationFrame 模拟 setInterval 合理利用浏览器空闲资源
 
-## Usage
+## 使用
 
 ```ts
 import { interval } from '@yu-kit/utils'
@@ -16,13 +16,13 @@ import { interval } from '@yu-kit/utils'
 
 ### 参数
 
-- ()=>void 函数：必选
+- `()=>void`
 
 ```
- 函数：必选
+函数：必选
 ```
 
-- number
+- `number`
 
 ```
 定时器两次执行之间的间隔时长 单位ms
