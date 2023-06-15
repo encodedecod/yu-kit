@@ -19,7 +19,6 @@ export interface YuToastProps {
 
 const YuToast: React.FC<YuToastProps> = (props) => {
   const { title, mask, visible, className } = props
-  console.log('visible', '=-=-=-')
   return visible ? (
     <div className={cx('yu-toast-box', { mask: !!mask }, className)}>
       <div className="toast">

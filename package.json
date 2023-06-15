@@ -20,7 +20,8 @@
     "dev": "tsup --watch",
     "build": "tsup",
     "release": "changeset publish",
-    "test:dev": "pnpm --filter @yu-kit/test dev"
+    "test:dev": "pnpm --filter @yu-kit/test dev",
+    "test:build": "pnpm --filter @yu-kit/test build"
   },
   "lint-staged": {
     "*.{vue,js,ts,jsx,tsx,json}": [
