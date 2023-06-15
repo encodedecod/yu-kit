@@ -6,7 +6,7 @@ category: UA
 
 拿到上一次的值
 
-## Usage
+## 使用
 
 ```ts
 import { usePrev } from '@yu-kit/hooks'
@@ -14,7 +14,9 @@ import { usePrev } from '@yu-kit/hooks'
 
 ## 文档
 
-### 参数 1
+### 参数
+
+- `T`
 
 ```
 任意值

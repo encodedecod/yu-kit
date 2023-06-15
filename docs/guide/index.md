@@ -31,6 +31,6 @@
 ```ts
 import { ElementHandler } from '@yu-kit/kit'
 import { useLoading } = from '@yu-kit/hooks'
-import { Button } = from '@yu-kit/components'
+import { YuButton } = from '@yu-kit/components'
 import { interval } = from '@yu-kit/utils'
 ```

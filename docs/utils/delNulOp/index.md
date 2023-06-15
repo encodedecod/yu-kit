@@ -6,7 +6,7 @@ category: UA
 
     去掉对象内的键值内容为空的内容
 
-## Usage
+## 使用
 
 ```ts
 import { delNulOp } from '@yu-kit/utils'
@@ -16,7 +16,7 @@ import { delNulOp } from '@yu-kit/utils'
 
 ### 传入参数
 
-- Record<string,T>
+- `Record<string,T>`
 
 ```
 对象
@@ -24,7 +24,7 @@ import { delNulOp } from '@yu-kit/utils'
 
 ### 返回参数
 
-- Record<string,T>
+- `Record<string,T>`
 
 ```
 去掉空键值的对象

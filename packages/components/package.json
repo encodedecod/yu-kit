@@ -1,6 +1,6 @@
 {
   "name": "@yu-kit/components",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "./cli/cjs/index.js",
   "module": "./cli/esm/index.mjs",

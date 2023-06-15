@@ -6,7 +6,7 @@ category: UA
 
     复制字符串内容到粘贴板
 
-## Usage
+## 使用
 
 ```ts
 import { copyToClipboard } from '@yu-kit/utils'
@@ -16,7 +16,7 @@ import { copyToClipboard } from '@yu-kit/utils'
 
 ### 参数 1
 
-- string
+- `string`
 
 ```
 粘贴的内容
@@ -24,8 +24,8 @@ import { copyToClipboard } from '@yu-kit/utils'
 
 ### 返回参数
 
-- Promise
+- `Promise<string>`
 
 ```
-Promise<string> 返回的内容 成功提示传入then，错误提示传入catch
+返回的内容 成功提示传入then，错误提示传入catch
 ```

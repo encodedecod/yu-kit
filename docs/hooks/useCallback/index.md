@@ -2,7 +2,7 @@
 
 模拟 usCallback
 
-## Usage
+## 使用
 
 ```ts
 import { useCallback } from '@yu-kit/hooks'
@@ -10,14 +10,24 @@ import { useCallback } from '@yu-kit/hooks'
 
 ## 描述
 
-### 参数 1
+### 参数
+
+- `T extends Function`
 
 ```
 函数：必选
 ```
 
-### 参数 2
+- `U[]`
 
 ```
-依赖数组：必选
+依赖数组
+```
+
+### 返回值
+
+- `T extends Function`
+
+```
+函数
 ```
