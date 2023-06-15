@@ -5,6 +5,8 @@ import { Suspense, useState } from 'react'
 import defaultProps from '../defaultProps'
 import { useLocation, useNavigate } from 'react-router-dom'
 
+import './style.scss'
+
 export default () => {
   const [settings, setSetting] = useState<Partial<ProSettings> | undefined>({
     fixSiderbar: true,
@@ -18,13 +20,7 @@ export default () => {
     return <div />
   }
   return (
-    <div
-      id="test-pro-layout"
-      style={{
-        height: '100vh',
-        overflow: 'auto'
-      }}
-    >
+    <div id="test-pro-layout" className="pro-content">
       <ProConfigProvider hashed={false}>
         <ConfigProvider
           getTargetContainer={() => {
@@ -63,12 +59,7 @@ export default () => {
             {...settings}
           >
             <PageContainer>
-              <ProCard
-                style={{
-                  height: '200vh',
-                  minHeight: 800
-                }}
-              >
+              <ProCard className="pro-card">
                 {Component && (
                   <Suspense fallback={<Spin />}>
                     <Component />

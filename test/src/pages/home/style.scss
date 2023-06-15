@@ -1,15 +1,8 @@
-.test-content {
-  display: flex;
-  flex-direction: column;
-
-  .test-button {
-    width: 100%;
-    padding: 0 16px;
-    margin-top: 12px;
-
-    .card {
-      display: block;
-      margin-top: 10px;
-    }
+.pro-content {
+  height: 100vh;
+  overflow: auto;
+  .pro-card {
+    height: 200vh;
+    min-height: 800;
   }
 }

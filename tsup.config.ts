@@ -25,6 +25,8 @@ const baseConfigs = [
     format: ['esm'] as Format[]
   }
 ]
+const filePaths: { text: string; path: string }[] = []
+const hasHandlePath: string[] = []
 
 const myReadfile = () => {
   const entries = fg.sync([`./packages/**/index.ts`, `./packages/**/index.tsx`], {
@@ -32,7 +34,6 @@ const myReadfile = () => {
     deep: Infinity,
     ignore: [`**/cli/**`, `**/node_modules/**`, `**/*.test.ts`]
   })
-  const filePaths: { text: string; path: string }[] = []
   const configs: Options[] = []
   baseConfigs.forEach((baseConfig) =>
     entries.forEach((file) => {
@@ -75,19 +76,28 @@ const myReadfile = () => {
           }
         ],
         onSuccess: async () => {
-          const item = filePaths[0]
-          if (item?.path) {
-            fs.access(item.path, (err) => {
-              if (!err) {
-                let data = item.text
-                data = `import "./index.css"; ${data}`
-                fs.writeFileSync(item.path, `import "./index.css"; ${item.text}`, {
-                  encoding: 'utf-8'
-                })
-                filePaths.shift()
-              }
-            })
-          }
+          filePaths.forEach((item) => {
+            if (!hasHandlePath.find((val) => val === item.path)) {
+              fs.access(item.path, (err) => {
+                if (!err) {
+                  let data = item.text
+                  data = `import "./index.css"; ${data}`
+                  fs.writeFile(
+                    item.path,
+                    `import "./index.css"; ${item.text}`,
+                    {
+                      encoding: 'utf-8'
+                    },
+                    (fileError) => {
+                      if (!fileError) {
+                        hasHandlePath.push(item.path)
+                      }
+                    }
+                  )
+                }
+              })
+            }
+          })
         }
       })
     })
