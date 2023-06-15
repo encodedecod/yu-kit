@@ -25,9 +25,12 @@
   },
   "lint-staged": {
     "*.{vue,js,ts,jsx,tsx,json}": [
-      "pnpm run lint:js",
-      "pnpm run lint:format",
+      "pnpm lint:js",
+      "pnpm lint:format",
       "bash -c 'npm run type-check'"
+    ],
+    "*.{scss,css,less}": [
+      "pnpm lint:style"
     ]
   },
   "keywords": [],
