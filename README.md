@@ -1,10 +1,8 @@
-<p align="center">鱼泡 React 组件库，monorepo构建，支持多包打包的组件库</p>
+<h2 align="center">鱼泡 React 组件库，monorepo构建，支持多包打包的组件库</h2>
 
 <h1 align="center">Yukit</h1>
 
 <div align="center">
-
-An excellent front-end solution for enterprise applications.
 
 [![react](https://img.shields.io/badge/react-%5E18.0.2-orange)](https://github.com/facebook/react)
 [![tsup](https://img.shields.io/badge/tsup-%5E6.5.0-blue)](https://github.com/egoist/tsup)
@@ -13,6 +11,7 @@ An excellent front-end solution for enterprise applications.
 [![npm](https://img.shields.io/npm/v/%40yu-kit%2Fcomponents)](https://www.npmjs.com/package/@yu-kit/components)
 
 </div>
+
 ## Features
 
 - 🚀 高质量组件，覆盖主流场景
@@ -20,10 +19,10 @@ An excellent front-end solution for enterprise applications.
 - 🍭 支持按需引用
 - 💪 支持 TypeScript
 
----
 ## 📚 Documentation
 
 [使用说明文档](https://encodedecod.github.io/yu-kit/)
+
 ## Install
 
 项目推荐使用 pnpm 的方式安装：
