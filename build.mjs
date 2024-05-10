@@ -1,10 +1,40 @@
-import { defineConfig, Format, Options } from 'tsup'
+import { build } from 'tsup'
 import fg from 'fast-glob'
 import { sassPlugin } from 'esbuild-sass-plugin'
 import fs from 'fs'
 import postcss from 'postcss'
 import autoprefixer from 'autoprefixer'
 
+// 异步执行函数，控制同步执行数量
+async function executeAsyncTasks(tasks, concurrency) {
+  let promises = []
+
+  // 并行执行指定数量的任务
+  for (let i = 0; i < concurrency; i++) {
+    if (tasks.length === 0) break
+    const task = tasks.shift()
+    if (task) {
+      promises.push(task)
+    }
+  }
+
+  // 如果还有未执行的任务，递归执行剩余任务
+  while (tasks.length > 0) {
+    await Promise.all(
+      promises.map(async (p) => {
+        await p()
+        promises.shift()
+      })
+    )
+    for (let i = 0; i < concurrency; i++) {
+      const task = tasks.shift()
+      if (task) {
+        promises.push(task)
+      }
+    }
+  }
+  await Promise.all(promises)
+}
 const baseConfigs = [
   {
     dts: true, // 添加 .d.ts 文件
@@ -13,7 +43,7 @@ const baseConfigs = [
     splitting: false,
     sourcemap: false, // 添加 sourcemap 文件
     clean: true, // 是否先清除打包的目录，例如 dist
-    format: ['cjs'] as Format[]
+    format: ['cjs']
   },
   {
     dts: true, // 添加 .d.ts 文件
@@ -22,19 +52,19 @@ const baseConfigs = [
     splitting: false,
     sourcemap: false, // 添加 sourcemap 文件
     clean: true, // 是否先清除打包的目录，例如 dist
-    format: ['esm'] as Format[]
+    format: ['esm']
   }
 ]
-const filePaths: { text: string; path: string }[] = []
-const hasHandlePath: string[] = []
+const filePaths = []
+const hasHandlePath = []
 
-const myReadfile = () => {
+const myReadfile = async () => {
   const entries = fg.sync([`./packages/**/index.ts`, `./packages/**/index.tsx`], {
     onlyFiles: false,
     deep: Infinity,
     ignore: [`**/cli/**`, `**/node_modules/**`, `**/*.test.ts`]
   })
-  const configs: Options[] = []
+  const configs = []
   baseConfigs.forEach((baseConfig) =>
     entries.forEach((file) => {
       const outDir = file.replace(/(packages\/)(.*?)\//, `./packages/$2/cli/${baseConfig.format[0]}/`).replace(/\/index.(ts|tsx)$/, '')
@@ -102,7 +132,11 @@ const myReadfile = () => {
       })
     })
   )
-  return defineConfig(configs)
+  executeAsyncTasks(
+    configs.map((item) => () => build(item)),
+    3
+  )
 }
-
-export default myReadfile()
+;(async () => {
+  await myReadfile()
+})()
