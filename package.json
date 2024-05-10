@@ -18,7 +18,7 @@
     "docs:build": "vitepress build docs",
     "type-check": "pnpm --filter './packages/**' type-check",
     "dev": "tsup --watch",
-    "build": "tsup",
+    "build": "node build.mjs",
     "release": "changeset publish",
     "test:dev": "pnpm --filter @yu-kit/test dev",
     "test:build": "pnpm --filter @yu-kit/test build"
