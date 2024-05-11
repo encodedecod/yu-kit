@@ -32,7 +32,7 @@ const DefaultSideBar = [
 ]
 
 export default {
-  base: '/yu-kit/',
+  base: './',
   title: 'yu-kit',
   lang: 'zh-CN',
   themeConfig: {
